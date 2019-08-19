@@ -4,7 +4,7 @@
 using namespace std;
 
 /* SOI - Task 5
- * 
+ *
  * 19.8.2019
  * ~ 32byTe
  */
