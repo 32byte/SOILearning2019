@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/* Soi - Task 5
+/* SOI - Task 5
  * 
  * 19.8.2019
  * ~ 32byTe
