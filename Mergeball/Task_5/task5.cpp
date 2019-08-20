@@ -56,8 +56,8 @@ int main()
 
 		/*Print the output with the correct fromat*/
 		cout << "Case #" << t << " " << out.size();
-		for(unsigned int i = 0; i < out.size(); i++)
-			cout << " " << out[i];
+		for(int i : out)
+			cout << " " << i;
 		cout << "\n";
 	}
 	return 0;

@@ -1,11 +1,11 @@
 #include <iostream>
-#include <vector>
+#include <stack>
 
 using namespace std;
 
 /* SOI - Task 1
  * 
- * 16.8.2019
+ * 20.8.2019
  * ~ 32byTe
  */
 int main()
@@ -16,40 +16,27 @@ int main()
     {
         /*Number of balls*/
         int N; cin >> N;
+        
+        stack<int> balls;
 
-        vector<unsigned int> balls (N);
-        for (int i = 0; i < N; i++)
-            cin >> balls[i];
-
-        while(1)
+        for(int n = 0; n < N; n++)
         {
-            unsigned int index = 0;
-            for (unsigned int i = 0; i < balls.size(); i++)
-                if (balls[i] < balls[index])
-                    index = i;
-
-            if (index + 1 >= balls.size()){
-                cout << "Case #" << i << ": Multiple\n";
-                break;
-            }
-
-            if (balls[index+1] != balls[index]){
-                cout << "Caseb #" << i << ": Multiple\n";
-                break;
-            }
-
-            balls[index] *= 2;
-            balls[index+1] = 0;
-            vector<unsigned int> newBalls;
-            for (unsigned int i = 0; i < balls.size(); i++) 
-                if (balls[i] != 0)
-                    newBalls.push_back(balls[i]);
-            balls = newBalls;
+            int bi; cin >> bi;
             
-            if(balls.size() == 1){
-                cout << "Case #" << i << ": Single\n";
-                break;
+            /*Merge the upper 2 balls (works because you can only merge balls that are next to eachother)*/
+            while (balls.size() > 0 && bi == balls.top())   
+            {
+                balls.pop();
+                bi *= 2;
             }
-        }
+
+            balls.push(bi);
+        } 
+        /*if balls.size() > 1 :  it wasn't possible to merge all the balls into one*/
+        if(balls.size() != 1)
+            cout << "Case #" << i << ": Multiple\n";
+        else
+            cout << "Case #" << i << ": Single\n";
     }
+    return 0;
 }
