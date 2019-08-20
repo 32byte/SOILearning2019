@@ -3,11 +3,18 @@
 
 using namespace std;
 
+/* SOI - Task 1
+ * 
+ * 16.8.2019
+ * ~ 32byTe
+ */
 int main()
 {
+    /*Number of TestCases*/
     int T; cin >> T;
     for (int i = 0; i < T; i++)
     {
+        /*Number of balls*/
         int N; cin >> N;
 
         vector<unsigned int> balls (N);

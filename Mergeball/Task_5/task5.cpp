@@ -12,8 +12,6 @@ int main()
 {
 	/*Number of TestCases*/
 	int T; cin >> T;
-
-	/*Run for each TestCase*/
 	for(int t = 0; t < T; t++)
 	{
 		/*Number of balls*/
